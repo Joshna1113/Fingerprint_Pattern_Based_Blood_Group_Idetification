@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e4ace6, #a5beea);
+            text-align: center;
+            color: black;
+        }
+        header {
+            background-color: #c51129;
+            color: white;
+            padding: 15px;
+            font-size: x-large;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: large;
+        }
+        nav a:hover {
+            background-color: #c51129;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .team-member {
+            background: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+            width: 250px;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>MEET OUR TEAM</header>
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/about">ABOUT</a>
+        <a href="/team">TEAM</a>
+        <a href="/login">LOGIN</a>
+        <a href="/signup">SIGNUP</a>
+    </nav>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='dharanisrii.jpg') }}" alt="Dharani Sri">
+            <h3>V Dharani Sri</h3>
+            <p>21KA1A0506 | JNTUACEK</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='abhinaya.jpg') }}" alt="Ahbinaya">
+            <h3>G Ahbinaya</h3>
+            <p>21KA1A0529 | JNTUACEK</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='joshna.jpg') }}" alt="Joshna">
+            <h3>M Joshna</h3>
+            <p>21KA1A0551 | JNTUACEK</p>
+        </div>
+        
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='divya.jpg') }}" alt="Divya Sree">
+            <h3>V Divya Sree</h3>
+            <p>21KA1A0503 | JNTUACEK</p>
+        </div>
+    </div>
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Address: 123 Main Street, Hometown, Country</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@abgd.com</p>
+    </footer>
+</body>
+</html>

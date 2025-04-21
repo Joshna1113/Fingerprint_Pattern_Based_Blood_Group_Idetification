@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Identification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e4ace6, #a5beea);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: rgb(0, 0, 0);
+        }
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .logout a {
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+        .logout a:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .blood-group {
+            font-size: 26px;
+            font-weight: bold;
+            color: #007bff;
+            background: rgba(0, 123, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .home-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logout">
+        <a href="/">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>Your Blood Group </h1>
+        <div class="blood-group">{{ blood_group }}</div>
+        <br>
+        <a href="/" class="home-btn">Go to Home</a>
+    </div>
+
+</body>
+</html>

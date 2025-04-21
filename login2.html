@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Identification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #e4ace6, #a5beea);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #imagePreview {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+        .btn-custom {
+            background-color: #4CAF50;
+            color: white;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background-color: #45a049;
+        }
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .logout a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout">
+        <a href="/" class="btn btn-danger">Logout</a>
+    </div>
+    
+    <div class="container">
+        <h2 class="mb-4">Identify Blood Group</h2>
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="imageUpload" class="form-label">Choose Image:</label>
+                <input type="file" name="file" class="form-control" accept="image/*" onchange="displayImage(this)">
+            </div>
+            <img id="imagePreview" src="" alt="Image Preview" class="img-fluid">
+            <button type="submit" class="btn btn-custom mt-3">Identify Blood Group</button>
+        </form>
+    </div>
+    
+    <script>
+        function displayImage(input) {
+            const imagePreview = document.getElementById('imagePreview');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                imagePreview.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
